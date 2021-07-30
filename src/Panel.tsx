@@ -1,13 +1,8 @@
 import React, { useEffect } from "react";
 import { GlobalControlsParameter } from "./GlobalControlsParameter";
-import {
-  useAddonState,
-  useChannel,
-  useGlobals,
-  useParameter,
-} from "@storybook/api";
+import { useGlobals, useParameter } from "@storybook/api";
 import { AddonPanel, ArgsTable, Args, ArgTypes } from "@storybook/components";
-import { ADDON_ID, EVENTS, PARAM_KEY } from "./constants";
+import { ADDON_ID, PARAM_KEY } from "./constants";
 
 type PanelProps = {
   active: boolean;
@@ -30,8 +25,10 @@ export function Panel(props: PanelProps) {
 
   const [{ [ADDON_ID]: values }, setGlobals] = useGlobals();
   useEffect(() => {
-    const defaultValues = getDefaultValues(variables);
-    setGlobals({ [ADDON_ID]: defaultValues });
+    if (!values) {
+      const defaultValues = getDefaultValues(variables);
+      setGlobals({ [ADDON_ID]: defaultValues });
+    }
   }, [variables, setGlobals]);
 
   const onUpdateArgs = (updatedArgs: Args) => {
