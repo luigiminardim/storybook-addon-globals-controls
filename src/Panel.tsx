@@ -1,36 +1,63 @@
-import React from "react";
-import { useAddonState, useChannel } from "@storybook/api";
-import { AddonPanel } from "@storybook/components";
-import { ADDON_ID, EVENTS } from "./constants";
-import { PanelContent } from "./components/PanelContent";
+import React, { useEffect } from "react";
+import { GlobalControlsParameter } from "./GlobalControlsParameter";
+import {
+  useAddonState,
+  useChannel,
+  useGlobals,
+  useParameter,
+} from "@storybook/api";
+import { AddonPanel, ArgsTable, Args, ArgTypes } from "@storybook/components";
+import { ADDON_ID, EVENTS, PARAM_KEY } from "./constants";
 
-interface PanelProps {
+type PanelProps = {
   active: boolean;
-}
+};
 
-export const Panel: React.FC<PanelProps> = (props) => {
-  // https://storybook.js.org/docs/react/addons/addons-api#useaddonstate
-  const [results, setState] = useAddonState(ADDON_ID, {
-    danger: [],
-    warning: [],
-  });
+const getDefaultValues = (variables: GlobalControlsParameter["variables"]) =>
+  Object.entries(variables).reduce(
+    (acc, [key, arg]) => ({ ...acc, [key]: arg?.defaultValue ?? null }),
+    {} as Record<string, unknown>
+  );
 
-  // https://storybook.js.org/docs/react/addons/addons-api#usechannel
-  const emit = useChannel({
-    [EVENTS.RESULT]: (newResults) => setState(newResults),
-  });
+export function Panel(props: PanelProps) {
+  const { variables, presetColors } = useParameter<GlobalControlsParameter>(
+    PARAM_KEY,
+    {
+      variables: {},
+      presetColors: [],
+    }
+  );
 
+  const [{ [ADDON_ID]: values }, setGlobals] = useGlobals();
+  useEffect(() => {
+    const defaultValues = getDefaultValues(variables);
+    setGlobals({ [ADDON_ID]: defaultValues });
+  }, [variables, setGlobals]);
+
+  const onUpdateArgs = (updatedArgs: Args) => {
+    const newValues = { ...values, ...updatedArgs };
+    setGlobals({ [ADDON_ID]: newValues });
+  };
+
+  const withPresetColors = Object.entries(variables).reduce(
+    (acc, [key, arg]) => {
+      if (arg?.control?.type !== "color" || arg?.control?.presetColors)
+        acc[key] = arg;
+      else acc[key] = { ...arg, control: { ...arg.control, presetColors } };
+      return acc;
+    },
+    {} as ArgTypes
+  );
+
+  console.log({ values, variables });
   return (
     <AddonPanel {...props}>
-      <PanelContent
-        results={results}
-        fetchData={() => {
-          emit(EVENTS.REQUEST);
-        }}
-        clearData={() => {
-          emit(EVENTS.CLEAR);
-        }}
+      <ArgsTable
+        inAddonPanel
+        rows={withPresetColors}
+        args={values}
+        updateArgs={onUpdateArgs}
       />
     </AddonPanel>
   );
-};
+}
