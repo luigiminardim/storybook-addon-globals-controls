@@ -51,7 +51,7 @@ export const globalTypes = {
 };
 
 export const parameters = {
-  globalControls: {
+  globalsControls: {
     presetColors: [
       { color: "#ff4785", title: "Coral" },
       "rgba(0, 159, 183, 1)",
