@@ -60,11 +60,11 @@ export const parameters = {
   } as GlobalControlsParam,
 };
 
-export const decorators = [
-  withGlobals((Story, globalValues) => (
-    <div>
-      {JSON.stringify(globalValues, null, 2)}
-      <Story />
-    </div>
-  )),
-];
+const withDisplayGlobals = withGlobals((Story, globalValues) => (
+  <div>
+    {JSON.stringify(globalValues, null, 2)}
+    <Story />
+  </div>
+));
+
+export const decorators = [withDisplayGlobals];
