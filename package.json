@@ -1,7 +1,7 @@
 {
   "name": "storybook-addon-kit",
   "version": "0.0.0",
-  "description": "everything you need to build a Storybook addon",
+  "description": "@luigiminardim/storybook-addon-global-controls gives you a graphical UI to dynamically interact with the Storybook's global parameters. It creates an addon panel next to your component examples (\"stories\"), so you can edit them live.",
   "keywords": [
     "storybook-addons",
     "style",
@@ -9,11 +9,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybookjs/storybook-addon-kit"
+    "url": "https://github.com/luigiminardim/storybook-addon-global-controls"
   },
-  "author": "winkerVSbecks",
-  "license": "MIT",
+  "author": "luigiminardim",
   "main": "dist/cjs/index.js",
+  "license": "0BSD",
   "module": "dist/esm/index.js",
   "types": "dist/ts/index.d.ts",
   "files": [
@@ -83,9 +83,7 @@
   "storybook": {
     "displayName": "Addon Kit",
     "supportedFrameworks": [
-      "react",
-      "vue",
-      "angular"
+      "react"
     ],
     "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
   }
