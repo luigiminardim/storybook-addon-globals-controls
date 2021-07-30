@@ -1,7 +1,7 @@
 {
-  "name": "storybook-addon-kit",
+  "name": "storybook-addon-globals-control",
   "version": "0.0.0",
-  "description": "@luigiminardim/storybook-addon-global-controls gives you a graphical UI to dynamically interact with the Storybook's global parameters. It creates an addon panel next to your component examples (\"stories\"), so you can edit them live.",
+  "description": "@luigiminardim/storybook-addon-globals-control gives you a graphical UI to dynamically interact with the Storybook's globals variables. It creates an addon panel next to your component examples (\"stories\"), so you can edit them live.",
   "keywords": [
     "storybook-addons",
     "style",
@@ -9,7 +9,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/luigiminardim/storybook-addon-global-controls"
+    "url": "https://github.com/luigiminardim/storybook-addon-globals-control"
   },
   "author": "luigiminardim",
   "main": "dist/cjs/index.js",
