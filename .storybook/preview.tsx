@@ -12,45 +12,21 @@ export const globalTypes = {
     defaultValue: true,
     control: false,
   },
-  boolean: {
-    name: "Boolean",
-    description: "Boolean Description",
-    defaultValue: true,
-    control: { type: "boolean" },
-  },
   number: {
     name: "Number",
-    description: "Number Description",
+    description:
+      "Should have a default value, a min and max values, and a step.",
     defaultValue: 8,
     control: { type: "number", min: 6, max: 10, step: 2 },
   },
-  range: {
-    name: "Range",
-    description: "Range Description",
-    defaultValue: 8,
-    control: { type: "range", min: 6, max: 10, step: 0.5 },
-  },
-  object: {
-    name: "Object",
-    description: "Object Description",
-    defaultValue: { hasDefaultValue: true },
-    control: { type: "object" },
-  },
-  date: {
-    name: "Date",
-    description: "Date Description",
-    control: { type: "date" },
-  },
   text: {
     name: "Text",
-    description: "Text Descrition",
-    defaultValue:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    defaultValue: "Should not have a description.",
     control: { type: "text" },
   },
   color: {
     name: "Color",
-    description: "Color Description",
+    description: "Should show some preset colors.",
     defaultValue: "#088",
     control: { type: "color" },
   },
