@@ -1,3 +1,21 @@
+# v0.0.4 (Sat Jul 31 2021)
+
+#### ⚠️ Pushed to `main`
+
+- Merge branch 'main' into develop ([@luigiminardim](https://github.com/luigiminardim))
+- test: refactor stories to be minimified. ([@luigiminardim](https://github.com/luigiminardim))
+- Merge branch 'feature/refactor-pannel' into develop ([@luigiminardim](https://github.com/luigiminardim))
+- Show uncontrolled globals that have control === false in the table. ([@luigiminardim](https://github.com/luigiminardim))
+- refactor: Simplify pannel to use the native globals. ([@luigiminardim](https://github.com/luigiminardim))
+- Update main.yml ([@luigiminardim](https://github.com/luigiminardim))
+- Merge tag '0.0.1' into develop ([@luigiminardim](https://github.com/luigiminardim))
+
+#### Authors: 1
+
+- Luigi Minardi ([@luigiminardim](https://github.com/luigiminardim))
+
+---
+
 # v0.0.4 (Fri Jul 30 2021)
 
 
