@@ -13,15 +13,9 @@ type PanelProps = {
   active: boolean;
 };
 
-const getDefaultValues = (globalTypes: ArgTypes) =>
-  Object.entries(globalTypes).reduce(
-    (acc, [key, arg]) => ({ ...acc, [key]: arg?.defaultValue ?? null }),
-    {} as Record<string, unknown>
-  );
-
 const filterUncontrolledTypes = (globalTypes: ArgTypes) =>
   Object.entries(globalTypes).reduce((acc, [key, arg]) => {
-    if (arg.control) acc[key] = arg;
+    if (arg.control !== undefined) acc[key] = arg;
     return acc;
   }, {} as ArgTypes);
 

@@ -6,6 +6,12 @@ export const globalTypes = {
     name: "Uncontrolled",
     description: "Should not have any controls.",
   },
+  visible: {
+    name: "Visible",
+    description: "Should appear in panel but it is uncontrolled.",
+    defaultValue: true,
+    control: false,
+  },
   boolean: {
     name: "Boolean",
     description: "Boolean Description",
