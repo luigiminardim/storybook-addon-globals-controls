@@ -13,15 +13,9 @@ type PanelProps = {
   active: boolean;
 };
 
-const getDefaultValues = (globalTypes: ArgTypes) =>
-  Object.entries(globalTypes).reduce(
-    (acc, [key, arg]) => ({ ...acc, [key]: arg?.defaultValue ?? null }),
-    {} as Record<string, unknown>
-  );
-
 const filterUncontrolledTypes = (globalTypes: ArgTypes) =>
   Object.entries(globalTypes).reduce((acc, [key, arg]) => {
-    if (arg.control) acc[key] = arg;
+    if (arg.control !== undefined) acc[key] = arg;
     return acc;
   }, {} as ArgTypes);
 
@@ -42,24 +36,17 @@ export function Panel(props: PanelProps) {
   });
   const globalTypes = useGlobalTypes();
   const [globals, updateGlobals] = useGlobals();
-  const defaultValues = useMemo(
-    () => getDefaultValues(globalTypes),
-    [globalTypes]
-  );
+
   const rows = useMemo(
     () => getRows(globalTypes, presetColors),
     [globalTypes, presetColors]
-  );
-  const args = useMemo(
-    () => ({ ...defaultValues, ...globals }),
-    [defaultValues, globals]
   );
   return (
     <AddonPanel {...props}>
       <ArgsTable
         inAddonPanel
         rows={rows}
-        args={args}
+        args={globals}
         updateArgs={updateGlobals}
       />
     </AddonPanel>
