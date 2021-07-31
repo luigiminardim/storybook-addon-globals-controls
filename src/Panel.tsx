@@ -42,24 +42,17 @@ export function Panel(props: PanelProps) {
   });
   const globalTypes = useGlobalTypes();
   const [globals, updateGlobals] = useGlobals();
-  const defaultValues = useMemo(
-    () => getDefaultValues(globalTypes),
-    [globalTypes]
-  );
+
   const rows = useMemo(
     () => getRows(globalTypes, presetColors),
     [globalTypes, presetColors]
-  );
-  const args = useMemo(
-    () => ({ ...defaultValues, ...globals }),
-    [defaultValues, globals]
   );
   return (
     <AddonPanel {...props}>
       <ArgsTable
         inAddonPanel
         rows={rows}
-        args={args}
+        args={globals}
         updateArgs={updateGlobals}
       />
     </AddonPanel>
