@@ -84,6 +84,8 @@ const withDisplayGlobals = withGlobals((Story, globalValues) => (
 export const decorators = [withDisplayGlobals];
 ```
 
+![panel example](https://github.com/luigiminardim/storybook-addon-globals-controls/blob/main/images/Globals%20Controls%20Panel.png?raw=true)
+
 > **NOTE:**
 > The controls only work for parameters marked with the `control` attribute, as in
 > (`control: {type: 'text'}`).
