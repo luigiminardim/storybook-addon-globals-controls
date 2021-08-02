@@ -1,6 +1,6 @@
 {
   "name": "@luigiminardim/storybook-addon-globals-controls",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "@luigiminardim/storybook-addon-globals-controls gives you a graphical UI to dynamically interact with the Storybook's globals variables. It creates an addon panel next to your component examples (\"stories\"), so you can edit them live.",
   "keywords": [
     "storybook-addons",
