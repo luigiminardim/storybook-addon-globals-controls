@@ -5,5 +5,5 @@ export default {
 } as Meta;
 
 export function test() {
-  return "Assert that the change of story doesn't affect the globals.";
+  return <h1>Assert that the change of story doesn't affect the globals</h1>;
 }
