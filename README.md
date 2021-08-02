@@ -1,7 +1,5 @@
 # Globals Controls Storybook Addon
 
-Sometimes your design system is built to scale amoung varius project
-
 Sometimes your design is built to scale among various projects and needs to set some customizations
 between those. In these cases, you might want to set variables in the global context to configure
 your components in the specific way needed for a particular project. It is also a good idea to
