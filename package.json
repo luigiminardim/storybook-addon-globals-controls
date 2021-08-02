@@ -85,7 +85,7 @@
   },
   "storybook": {
     "displayName": "Globals Controls",
-    "icon": "https://raw.githubusercontent.com/luigiminardim/storybook-addon-global-controls/main/Globals%20Controls.png",
+    "icon": "https://github.com/luigiminardim/storybook-addon-globals-controls/blob/main/images/Globals%20Controls.png?raw=true",
     "supportedFrameworks": [
       "react"
     ]
