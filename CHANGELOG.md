@@ -1,3 +1,15 @@
+# v0.1.2 (Mon Aug 02 2021)
+
+#### ⚠️ Pushed to `main`
+
+- chore: Remove repeated README paragraph. ([@luigiminardim](https://github.com/luigiminardim))
+
+#### Authors: 1
+
+- Luigi Minardi ([@luigiminardim](https://github.com/luigiminardim))
+
+---
+
 # v0.0.4 (Mon Aug 02 2021)
 
 #### ⚠️ Pushed to `main`
