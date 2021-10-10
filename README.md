@@ -91,5 +91,5 @@ export const decorators = [withDisplayGlobals];
 
 ## Contribute
 
-Contribute to this addon by forking the `develop` branch and sending pull requests, you can
+Contribute to this addon by forking the `main` branch and sending pull requests, you can
 also start an issue in the repo for help or to request new features.
