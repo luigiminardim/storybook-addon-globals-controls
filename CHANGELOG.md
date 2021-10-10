@@ -1,3 +1,15 @@
+# v0.1.3 (Sun Oct 10 2021)
+
+#### ⚠️ Pushed to `main`
+
+- docs: Update contribute guide. ([@luigiminardim](https://github.com/luigiminardim))
+
+#### Authors: 1
+
+- Luigi Minardi ([@luigiminardim](https://github.com/luigiminardim))
+
+---
+
 # v0.1.2 (Mon Aug 02 2021)
 
 #### ⚠️ Pushed to `main`
